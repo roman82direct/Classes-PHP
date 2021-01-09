@@ -9,4 +9,5 @@ return array(
     'Child\\NewMan' => $baseDir . '/classes/NewMan.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'base\\Man' => $baseDir . '/classes/Base/Man.php',
+    'main\\User' => $baseDir . '/classes/main/User.php',
 );
