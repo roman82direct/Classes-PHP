@@ -10,6 +10,7 @@ class ComposerStaticInit109b9a916579103f8652d2a97f7d0ed3
         'Child\\NewMan' => __DIR__ . '/../..' . '/classes/NewMan.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'base\\Man' => __DIR__ . '/../..' . '/classes/Base/Man.php',
+        'main\\User' => __DIR__ . '/../..' . '/classes/main/User.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -2,13 +2,21 @@
 
 namespace base;
 
-Class Man{
-    public $name;
-    public $age;
+use main\User;
+
+Class Man extends User {
+//    public $name;
+//    public $age;
+    public static $init;
         
-        public function __construct($name, $age){
-            $this->name = $name;
-            $this->age= $age;
+    public function __construct($name, $age){
+        $this->name = $name;
+        $this->age= $age;
+    }
+
+    public static function setInit($status){
+        self::$init = $status;
+        return self::$init;
     }
 }
 
