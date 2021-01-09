@@ -7,7 +7,9 @@ use main\User;
 Class Man extends User {
 //    public $name;
 //    public $age;
+
     public static $init;
+    public static $users = [];
         
     public function __construct($name, $age){
         $this->name = $name;

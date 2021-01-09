@@ -7,10 +7,23 @@ use base\Man;
 
 Class NewMan extends Man {
     private $pass;
-    private $role;
+    /**
+     * @var string
+     */
+    private $role ;
+    /**
+     * @var array
+     */
+    private $storage = [];
 
+    /**
+     * @param string $pass
+     * @return mixed
+     */
     public function setPass($pass){
-        $this->pass = $pass;
+        if ($this->role == 'Admin'){
+            $this->pass = $pass;
+        }
         return $this->pass;
     }
 
@@ -23,8 +36,19 @@ Class NewMan extends Man {
         echo "User: " . $this->name.'<br>';
         echo "Age: " . $this->age.'<br>';
 //        echo self::setPass('123'). '<br>';//protected
-        echo "Role: " . $this->role.'<br>';//static
+        echo "Role: " . $this->role.'<br>';
         echo "Pass: " . $this->pass.'<br>';
         echo "User Status: " . self::$init.'<hr>';
+    }
+
+    public function setData(){
+//        array_push($this->storage, ['name'=>$this->name, 'age'=>$this->age, 'pass'=>$this->pass, 'role'=>$this->role]);
+        $this->storage['name'] = $this->name;
+        $this->storage['age'] = $this->age;
+        $this->storage['pass'] = $this->pass;
+        $this->storage['role'] = $this->role;
+
+        array_push(self::$users, $this->storage);
+        return $this->storage;
     }
 }
